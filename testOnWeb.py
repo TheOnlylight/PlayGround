@@ -37,16 +37,28 @@ xuanke = 'https://10.3.58.19/jsxsd/xsxk/xsxk_index?jx0502zbid=11CB38D49596468FAA
 resp = session.get(xuanke)
 # resp = session.get('http://10.3.58.10:8080/jsxsd/xspj/xspj_find.do')
 xuankedata={
-    "kcid": '3412110160',
+    'kcid'='3412110160',
     'cfbs': 'null',
     'jx0404id': '202020211001756',
     'xkzy': '',
     'trjf': '',
     '_': '1601873522893'
 }
+xuankeurl2 = 'https://10.3.58.19/jsxsd/xsxkkc/xxxkOper?kcid=3412110170&cfbs=null&jx0404id=202020211001757&xkzy=&trjf=&_=1601947778859'
+
+xuankedata2 = {
+    'kcid': '3412110170',
+    'cfbs': 'null',
+    'jx0404id': '202020211001757',
+    'xkzy': '',
+    'trjf': '',
+    '_': '1601947778859'
+}
 while(1):
     resp = session.post(
     xuankeurl,xuankedata,headers,
     verify=False
     )
+    resp = session.post(xuankeurl2, xuankedata2, headers, verify=False)
+    print(resp.content.decode('utf-8'))
     pass
